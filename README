@@ -1,0 +1,22 @@
+Rig depends on Incus. On Debian, to install and setup Incus, follow the below steps:
+
+1. apt install incus inclus-client
+2. usermod -aG incus-admin $USER
+3. incus admin init
+    A suitable config to initialize to might look like:
+        - Clustering: no
+        - Storage backend: `dir`, `btrfs`, or `zfs`
+          - `dir` is simplest.
+          - `zfs` or `btrfs` is better for snapshots/clones.
+        - Network bridge: yes
+          - Name: `br-agent4`
+          - IPv4: auto
+          - NAT: yes
+          - IPv6: your choice; disabling is simpler.
+        - Images: default is fine.
+
+Rig supports the following environment variables:
+    RIG_ARTIFACT_ROOT -- the root directory to pull artifacts to
+    RIG_AUTH_CFG_DIR  -- auth config files (if not using API keys)
+    ANTHROPIC_API_KEY -- will be used as the default anthropic api key
+    OPENAI_API_KEY    -- will be used as the default openai api key
