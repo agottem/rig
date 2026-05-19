@@ -2,31 +2,34 @@
 package_update: true
 packages:
   - bash
+  - build-essential
   - ca-certificates
   - curl
+  - dnsutils
+  - gdb
   - git
   - jq
   - less
   - nano
+  - net-tools
+  - nmap
   - nodejs
   - npm
   - python3
   - python3-pip
   - python3-venv
-  - build-essential
   - ripgrep
-  - unzip
-  - wget
-  - net-tools
-  - traceroute
-  - nmap
-  - tcpdump
-  - dnsutils
   - strace
-  - gdb
+  - sudo
+  - tcpdump
+  - traceroute
+  - unzip
   - w3m
   - w3m-img
+  - wget
 users:
   - name: agent
+    groups: [sudo]
+    sudo: ALL=(ALL) NOPASSWD:ALL
     shell: /bin/bash
     lock_passwd: true

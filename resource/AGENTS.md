@@ -4,7 +4,8 @@
 - This dev environment is running in a sandbox VM that'll be thrown away when work is complete
 - This dev environment can be uniquely identified by the name specified by the environment variable
   "VM_NAME"
-- Request installation of any packages that are required but missing
+- Agents have sudo permissions should they need to make changes to the VM but be sure to document
+  any changes made
 - The git repo to work on is specified in the environment variable "REPO"
 - Always check the root directory of the REPO git repository for an AGENTS.md and process it if
   found
