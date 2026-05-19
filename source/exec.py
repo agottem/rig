@@ -1,5 +1,7 @@
 import sys
 import subprocess
+import pathlib
+import shutil
 
 import util
 
@@ -8,12 +10,15 @@ def pull_artifacts (vm_name, artifact_root):
     util.print_acp_safe(f"Pulling artifacts from {vm_name} to {artifact_root} ...", end="")
 
     try:
-        util.run_acp_safe(["mkdir", "-p", artifact_root], check=True)
-        util.run_acp_safe(["incus", "file", "pull", "-r", f"{vm_name}/artifacts/{vm_name}", artifact_root], check=True)
+        artifact_dest_dir = pathlib.Path(f"{artifact_root}/{vm_name}")
+        if artifact_dest_dir.exists() and artifact_dest_dir.is_dir():
+            shutil.rmtree(artifact_dest_dir)
+
+        util.run_acp_safe(["incus", "file", "pull", "-p", "-r", f"{vm_name}/artifacts/{vm_name}", artifact_root], check=True)
         util.print_acp_safe("Done")
 
     except Exception as e:
-        util.print_acp_safe("Failed: {e}")
+        util.print_acp_safe(f"Failed: {e}")
         raise
 
 def run_vm (profile,
