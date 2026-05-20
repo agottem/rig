@@ -64,7 +64,12 @@ def delete_image (name):
 
 def build_std_templs (lim_mem, lim_cpu, parent_nic, vm_image, resource_dir):
     create_profile("rig-std", lim_mem, lim_cpu, parent_nic)
-    create_image("rig-std", "rig-std", vm_image, resource_dir)
+
+    try:
+        create_image("rig-std", "rig-std", vm_image, resource_dir)
+    except Exception as e:
+        delete_profile("rig-std")
+        raise
 
 def delete_std_templs ():
     delete_image("rig-std")

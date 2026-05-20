@@ -2,14 +2,36 @@
 package_update: true
 packages:
   - bash
+  - bat
+  - binutils
   - build-essential
   - ca-certificates
+  - clang
+  - clang-format
+  - clang-tidy
   - curl
+  - direnv
   - dnsutils
+  - fd-find
+  - fzf
+  - g++
+  - gcc
   - gdb
   - git
+  - git-lfs
+  - glibc-doc
+  - gnupg
+  - htop
+  - inetutils-ping
+  - iotop
+  - iproute2
   - jq
   - less
+  - linux-perf
+  - lsof
+  - ltrace
+  - make
+  - manpages-dev
   - nano
   - net-tools
   - nmap
@@ -19,14 +41,23 @@ packages:
   - python3-pip
   - python3-venv
   - ripgrep
+  - rsync
+  - shfmt
+  - socat
+  - sqlite3
   - strace
   - sudo
   - tcpdump
   - traceroute
+  - tree
   - unzip
+  - unzip
+  - valgrind
   - w3m
   - w3m-img
   - wget
+  - xz-utils
+  - zip
 users:
   - name: agent
     groups: [sudo]
