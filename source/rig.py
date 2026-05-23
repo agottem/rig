@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     subp = sub.add_parser("pull")
     subp.add_argument("--name",          type=str,  required=True)
-    subp.add_argument("--artifact-root", type=str,  default=os.getenv("RIG_ARTIFACTS_DIR"))
+    subp.add_argument("--artifact-root", type=str,  default=os.getenv("RIG_ARTIFACT_ROOT"))
 
     resource_dir = f"{pathlib.Path(__file__).resolve().parent.parent}/resource"
 

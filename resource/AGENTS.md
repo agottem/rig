@@ -11,3 +11,8 @@
   found
 - Any completed work that should persist outside of this VM should be written to the directory
   specified by the environment variable "ARTIFACTS_DIR"
+- Work written to the ARTIFACTS_DIR should not include build artifacts or other temporary files
+- Work written to the ARTIFACTS_DIR should have a short descriptive name along with a date-time
+  suffix
+- When changes are made to the repo and work is complete, use "git format-patch" to produce a patch
+  file and store it in the ARTIFACTS_DIR
