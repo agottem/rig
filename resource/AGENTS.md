@@ -16,3 +16,5 @@
   suffix
 - When changes are made to the repo and work is complete, use "git format-patch" to produce a patch
   file and store it in the ARTIFACTS_DIR
+- Any new or modified code should retain the formatting and styling of the existing code base,
+  matching naming case convention and style, alignment and overall arrangement of the code.
