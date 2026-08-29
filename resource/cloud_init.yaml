@@ -1,14 +1,17 @@
 #cloud-config
 package_update: true
 packages:
+  - autoconf
+  - automake
+  - autotools-dev
   - bash
   - bat
   - binutils
   - build-essential
   - ca-certificates
-  - clang
-  - clang-format
-  - clang-tidy
+  - clang-22
+  - clang-format-22
+  - clang-tidy-22
   - curl
   - direnv
   - dnsutils
@@ -27,6 +30,7 @@ packages:
   - iproute2
   - jq
   - less
+  - libtool
   - linux-perf
   - lsof
   - ltrace
